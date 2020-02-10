@@ -1,0 +1,9 @@
+.idea
+.sonarlint
+.vscode
+build
+dist
+public
+.build
+coverage
+node_modules
