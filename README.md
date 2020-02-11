@@ -2,7 +2,7 @@
 
 ## What it does
 
-Automatic add hours to factorial working days. Only runs until the current day.
+Automatic add hours to factorial working days. Only runs until the current day. Made with Cypress.
 
 ## How to configure
 
@@ -32,8 +32,8 @@ in order to install everything.
 
 Once you set your username/password and install all dependencies, run the command
 
-`$ yarn cypress run`
+`$ yarn cypress run` or `$ npm run cypress run` to run automatically.
 
-or
+If you want to see the process of how it's done, run the following command
 
-`$ npm run cypress run`
+`$ yarn cypress open` or `$ npm run cypress open` and click the test you want to run.
