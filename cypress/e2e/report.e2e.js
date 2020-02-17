@@ -1,4 +1,5 @@
 import some from 'lodash/some';
+import isEmpty from 'lodash/isEmpty';
 
 describe('Factorial ', () => {
   it('Fill worked days', () => {
@@ -11,13 +12,17 @@ describe('Factorial ', () => {
 
     cy.get('tbody > tr:not([class*="disabled"])').each($tr => {
       cy.wrap($tr).within($el => {
+        let addNewRow = false;
+
         if ($el.find('input:not([disabled])').length === 2) {
           cy.get('button').click();
+          addNewRow = true;
         }
 
-        const isSomeInputEmpty = some($el.find('input:not([disabled])'), input => !input.value);
+        const enabledInputs = $el.find('input:not([disabled])');
+        const isSomeInputEmpty = some(enabledInputs, isEmpty);
 
-        if ($el.find('input:not([disabled])').length > 0 && isSomeInputEmpty) {
+        if (!isEmpty(enabledInputs) && (isSomeInputEmpty || addNewRow)) {
           cy.get('input:not([disabled])').each(($input, index) => {
             const input = cy.wrap($input);
             switch (index) {
