@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "cypress": "^4.0.1",
+    "cypress": "^4.0.2",
     "lodash": "^4.17.15"
   }
 }
